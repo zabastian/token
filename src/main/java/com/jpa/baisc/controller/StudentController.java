@@ -1,5 +1,6 @@
 package com.jpa.baisc.controller;
 
+import com.jpa.baisc.domain.Student;
 import com.jpa.baisc.dto.student.StudentCreateRequestDto;
 import com.jpa.baisc.dto.student.StudentCreateResponseDto;
 import com.jpa.baisc.dto.student.StudentListResponseDto;
@@ -8,6 +9,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -32,5 +35,10 @@ public class StudentController {
     public ResponseEntity<StudentListResponseDto> getCourseListAPI() {
         StudentListResponseDto response = studentService.getStudentList();
         return new ResponseEntity<StudentListResponseDto>(response, HttpStatus.OK);
+    }
+
+    @GetMapping("/test")
+    public void studentTestAPI(){
+        studentService.test();
     }
 }

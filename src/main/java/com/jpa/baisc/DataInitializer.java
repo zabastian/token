@@ -29,10 +29,11 @@ public class DataInitializer implements CommandLineRunner {
         courseRepository.saveAll(courseList);
 
         Student gygim = Student.createInitStudent("gygim", java);
+        Student jun = Student.createInitStudent("jun", java);
         Student steve = Student.createInitStudent("Steve", java);
         Student john = Student.createInitStudent("John", java);
         Student isac = Student.createInitStudent("Isac", java);
-        List<Student> studentList = List.of(gygim, steve, john, isac);
+        List<Student> studentList = List.of(gygim,jun, steve, john, isac);
         studentRepository.saveAll(studentList);
     }
 }
